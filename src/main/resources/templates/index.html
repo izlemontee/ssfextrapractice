@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <form method="GET" data-th-action="@{/searchcountry}">
+        <div>
+        <select name="category" id="category">
+            <option value="business">Business</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="general">General</option>
+            <option value="health">Health</option>
+            <option value="science">Science</option>
+            <option value="sports">Sports</option>
+            <option value="technology">Technology</option>
+        </select>
+        </div>
+        <div>
+        <select name="countries" id="countries">
+            <option data-th-each="country:${countrylist}" data-th-value="${country}" data-th-text="${country}"></option>
+        </select>
+        </div>
+    <button type="submit">GO</button>
+    </form>
+</body>
+</html>
